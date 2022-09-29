@@ -3,16 +3,59 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  {% block meta %}
-  {% endblock meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: bisque;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 10px 10px;
+            text-decoration: none;
+        }
+        
+        li h5 {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 10px 10px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: rgb(140, 125, 107);
+        }
+        
+        .active {
+            background-color: rgba(255, 228, 196, 0.742);
+        }
+    </style>
+    {% block meta %} {% endblock meta %}
 </head>
 
 <body>
-  {% block content %}
-  {% endblock content %}
+    <ul>
+        <li>
+            <h5>Dylan Adiprawira</h5>
+        </li>
+        <li style="float:right"><a class="active" href="logout">logout</a></li>
+    </ul>
+    {% block content %} {% endblock content %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 
 </html>
